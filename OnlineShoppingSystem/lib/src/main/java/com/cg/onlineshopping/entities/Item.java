@@ -14,6 +14,8 @@ public class Item {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long item_id;
+	@Column(name="code")
+	private String code;
 	@Column(name="item_name",length=20)
 	private String item_name;
 	@Column(name="item_price",length=20)
@@ -44,5 +46,11 @@ public class Item {
 	public void setItem_description(String item_description) {
 		this.item_description = item_description;
 	}	
+	 @Override
+	    public String toString() {
+	        return "item [id=" + item_id + ", code=" + code + ", name=" + item_name  +", item_price=" + item_price 
+	        		+", description="+ item_description +  "]";
+	               
+	    }
 
 }

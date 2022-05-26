@@ -26,8 +26,12 @@ public class Customer {
 	private String user_name;
 	@Column(name="password",length=25)
 	private String password;
+	@Transient
+	private String confirmPassword;
 	@Column(name="address",length=60)
 	private String address;
+	@OneToOne(mappedBy = "customer", cascade = CascadeType.ALL)
+    private Cart cart;
 	public long getCustomer_id() {
 		return customer_id;
 	}
