@@ -10,8 +10,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="payment_details")
-public class Payment_Details {
+@Table(name="paymentdetails")
+public class PaymentDetails {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -37,7 +37,7 @@ public class Payment_Details {
 	
 	@OneToOne
 	@JoinColumn(name="order_id")
-	private Order order;
+	private Orders orders;
 	
 	public String getUpi_id() {
 		return upi_id;
@@ -74,6 +74,18 @@ public class Payment_Details {
 	}
 	public void setTotal_ammount(double total_ammount) {
 		this.total_ammount = total_ammount;
+	}
+	public int getPayment_id() {
+		return payment_id;
+	}
+	public void setPayment_id(int payment_id) {
+		this.payment_id = payment_id;
+	}
+	public Orders getOrder() {
+		return orders;
+	}
+	public void setOrder(Orders orders) {
+		this.orders = orders;
 	}
 	
 	

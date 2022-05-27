@@ -14,12 +14,16 @@ public class Item {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int item_id;
+	
 	@Column(name="code")
 	private String code;
+	
 	@Column(name="item_name",length=20)
 	private String item_name;
+	
 	@Column(name="item_price",length=20)
 	private double item_price;
+	
 	@Column(name="item_description",length=50)
 	private String item_description;
 	

@@ -12,25 +12,30 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="order")
-public class Order {
+@Table(name="orders")
+public class Orders {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String order_id;
+	private int order_id;
+	
 	@Column(name="order_status",length=20)
 	private String order_status;
-	@Column(name="order_date",length=20)
+	
+	@Column(name="order_date")
 	private Date order_date;
-	@Column(name="item_name",length=20)
-	private long estimate_delivery_time;
+	
+	@Column(name="estimate_delivery_time")
+	private double estimate_delivery_time;
+	
 	@OneToOne
-	@JoinColumn(name="customer_id")
-	private Customer customer;
-	public String getOrder_id() {
+	@JoinColumn(name="payment_id")
+	private PaymentDetails paymentdetails;
+	
+	public int getOrder_id() {
 		return order_id;
 	}
-	public void setOrder_id(String order_id) {
+	public void setOrder_id(int order_id) {
 		this.order_id = order_id;
 	}
 	public String getOrder_status() {
@@ -45,17 +50,20 @@ public class Order {
 	public void setOrder_date(Date order_date) {
 		this.order_date = order_date;
 	}
-	public long getEstimate_delivery_time() {
+	public double getEstimate_delivery_time() {
 		return estimate_delivery_time;
 	}
-	public void setEstimate_delivery_time(long estimate_delivery_time) {
+	public void setEstimate_delivery_time(double estimate_delivery_time) {
 		this.estimate_delivery_time = estimate_delivery_time;
 	}
-	public Customer getCustomer() {
-		return customer;
+	public PaymentDetails getPaymentdetails() {
+		return paymentdetails;
 	}
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
+	public void setPaymentdetails(PaymentDetails paymentdetails) {
+		this.paymentdetails = paymentdetails;
 	}
+	
+	
+	
 
 }

@@ -34,8 +34,9 @@ public class Customer {
 	@Column(name="address",length=60)
 	private String address;
 	@OneToOne
-	@JoinColumn(name="customer_id")
+	@JoinColumn(name="cart_id")
     private Cart cart;
+	
 	public long getCustomer_id() {
 		return customer_id;
 	}
