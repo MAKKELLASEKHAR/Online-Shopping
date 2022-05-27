@@ -13,7 +13,7 @@ public class Item {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long item_id;
+	private int item_id;
 	@Column(name="code")
 	private String code;
 	@Column(name="item_name",length=20)
@@ -22,10 +22,11 @@ public class Item {
 	private double item_price;
 	@Column(name="item_description",length=50)
 	private String item_description;
-	public long getItem_id() {
+	
+	public int getItem_id() {
 		return item_id;
 	}
-	public void setItem_id(long item_id) {
+	public void setItem_id(int item_id) {
 		this.item_id = item_id;
 	}
 	public String getItem_name() {

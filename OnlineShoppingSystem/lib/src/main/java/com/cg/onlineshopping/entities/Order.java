@@ -25,7 +25,7 @@ public class Order {
 	@Column(name="item_name",length=20)
 	private long estimate_delivery_time;
 	@OneToOne
-	@JoinColumn(name="customer_id",unique=true)
+	@JoinColumn(name="customer_id")
 	private Customer customer;
 	public String getOrder_id() {
 		return order_id;

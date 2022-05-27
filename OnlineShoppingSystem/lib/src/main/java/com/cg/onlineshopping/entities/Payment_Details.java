@@ -2,24 +2,43 @@ package com.cg.onlineshopping.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="payment_details")
 public class Payment_Details {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int payment_id;
+	
 	@Column(name="upi_id",length=20)
 	private String upi_id;
+	
 	@Column(name="upi_password",length=30)
 	private int upi_password;
+	
 	@Column(name="name_on_card",length=30)
 	private String name_on_card;
+	
 	@Column(name="card_number",length=25)
 	private long card_number;
+	
 	@Column(name="cvv",length=4)
 	private int cvv;
+	
 	@Column(name="total_ammount")
 	private double total_ammount;
+	
+	@OneToOne
+	@JoinColumn(name="order_id")
+	private Order order;
+	
 	public String getUpi_id() {
 		return upi_id;
 	}
