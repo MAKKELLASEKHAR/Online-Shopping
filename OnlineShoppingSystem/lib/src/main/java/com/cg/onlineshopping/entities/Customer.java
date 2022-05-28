@@ -16,7 +16,7 @@ public class Customer {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long customer_id;
+	private int customer_id;
 	@Column(name="first_name",length=20)
 	private String first_name;
 	@Column(name="last_name",length=20)
@@ -37,10 +37,10 @@ public class Customer {
 	@JoinColumn(name="cart_id")
     private Cart cart;
 	
-	public long getCustomer_id() {
+	public int getCustomer_id() {
 		return customer_id;
 	}
-	public void setCustomer_id(long customer_id) {
+	public void setCustomer_id(int customer_id) {
 		this.customer_id = customer_id;
 	}
 	public String getFirst_name() {
